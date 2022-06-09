@@ -28,7 +28,7 @@ const MainPage: React.FC = () => {
 			{loading ? (
 				<CustomGridContainer container spacing={3} sx={{ pt: 10, pb: 2 }}>
 					{product.map((d) => (
-						<Grid item xs={12} md={4} key={d.id}>
+						<Grid item xs={12} sm={6} lg={4} key={d.id}>
 							<ProductItem
 								thumbnail={d.thumbnail}
 								title={d.title}

@@ -5,7 +5,6 @@ import { logout } from '../redux/dataSlice'
 
 import { Typography, Box, Skeleton, Button } from '@mui/material'
 import { useNavigate } from 'react-router'
-import { fontWeight } from '@mui/system'
 
 const ProfilePage = () => {
 	const login = useAppSelector((state) => state.login)

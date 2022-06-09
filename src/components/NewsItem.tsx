@@ -13,6 +13,8 @@ import {
 } from '@mui/material'
 
 const NewsList: React.FC<INews> = ({ url, title, description, urlToImage }) => {
+	const shortDescr =
+		description.length > 100 ? `${description.slice(0, 100)}...` : description
 	return (
 		<Box sx={{ my: 2 }}>
 			<Card sx={{ display: 'flex' }}>
@@ -21,7 +23,10 @@ const NewsList: React.FC<INews> = ({ url, title, description, urlToImage }) => {
 					image={urlToImage}
 					height='180'
 					width='340'
-					sx={{ width: '340px', height: '180px' }}
+					sx={{
+						width: '340px',
+						height: '180px',
+					}}
 				/>
 				<Box
 					sx={{
@@ -38,7 +43,7 @@ const NewsList: React.FC<INews> = ({ url, title, description, urlToImage }) => {
 							<Typography>{title}</Typography>
 						</Box>
 						<Box>
-							<Typography>{description}</Typography>
+							<Typography>{shortDescr}</Typography>
 						</Box>
 					</CardContent>
 					<CardActions>
