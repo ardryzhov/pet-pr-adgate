@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# Pet Project | Ad Gate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Стек:
 
-## Available Scripts
+- React
+- TypeScript
+- Redux Toolkit
+- React Router
 
-In the project directory, you can run:
+## Доп. библиотеки:
 
-### `npm start`
+- React hook Form
+- Material UI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Главная страница
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Main Page](src/assets/img/main-page.png)
 
-### `npm test`
+При входе на главную страницу идёт запрос на https://dummyjson.com/products , откуда загружается 20 товаров.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Страница новостей
 
-### `npm run build`
+![News Page](src/assets/img/news-page.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+При переходе на вкладку **News** делается запрос на https://gnews.io , и так же как и с главной страницей эта информация отрисовывается.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Страница Профиля
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+При попытке зайти на страницу профиля будет производиться проверка в стор (redux toolkit), и если поле **auth** находится в состоянии **false**, то через хук _useNavige_ пользователь будет переведён на страницу _/login_
 
-### `npm run eject`
+![login page](src/assets/img/auth-page.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Для входа в систему необходимо указать:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Login: Admin
+- Password: 12345
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+В случае, если информация введена неверно, то через useHookForm происходит валидация
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![auth error](src/assets/img/auth-validation.png)
 
-## Learn More
+При вводе верных данных происходит перевод на _/profile_
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![profile page](src/assets/img/user-profile.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+В профиле отображается плейсхолдер для фото, логин, пароль, а также другая информация.  
+При нажатии на кнопку _Выйти_ в сторе поле auth меняется на **false**, и происходит переход на страницу авторизации.
+
+## Ссылки:
+
+- Деплой: https://ardryzhov.github.io/pet-pr-adgate/
+- Product API: https://dummyjson.com/products
+- News API: https://gnews.io
