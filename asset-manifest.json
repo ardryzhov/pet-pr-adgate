@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pet-pr-adgate/static/css/main.4c074f74.css",
+    "main.js": "/pet-pr-adgate/static/js/main.3f7ca531.js",
+    "index.html": "/pet-pr-adgate/index.html",
+    "main.4c074f74.css.map": "/pet-pr-adgate/static/css/main.4c074f74.css.map",
+    "main.3f7ca531.js.map": "/pet-pr-adgate/static/js/main.3f7ca531.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4c074f74.css",
+    "static/js/main.3f7ca531.js"
+  ]
+}
