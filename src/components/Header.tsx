@@ -30,11 +30,7 @@ const Header: React.FC = () => {
 			>
 				<HeaderLink to='/'>AdGate</HeaderLink>
 				<HeaderLink to='/news'>News</HeaderLink>
-				{login ? (
-					<HeaderLink to='/profile'>Profile</HeaderLink>
-				) : (
-					<HeaderLink to='/login'>Login</HeaderLink>
-				)}
+				<HeaderLink to={login ? '/profile' : '/login'}>Profile</HeaderLink>
 			</Box>
 		</AppBar>
 	)

@@ -64,8 +64,6 @@ export const fetchNews = createAsyncThunk(
 			'https://newsapi.org/v2/top-headlines?pageSize=15&country=us&apiKey=6b91115a0e8847a19dfac05baa60714d'
 		)
 		const jsonResult = await response.json()
-		// console.log('jsonResult: ', jsonResult)
-		// console.log('jsonResult.products: ', jsonResult.products)
 		dispatch(addNews(jsonResult.articles))
 	}
 )
@@ -74,13 +72,8 @@ const dataSlice = createSlice({
 	name: 'data',
 	initialState,
 	reducers: {
-		login(state, action: PayloadAction<{ name: string; password: number }>) {
-			if (
-				state.login === action.payload.name &&
-				state.password === action.payload.password
-			) {
-				state.auth = true
-			}
+		login(state) {
+			state.auth = true
 		},
 		logout(state) {
 			state.auth = false
@@ -90,8 +83,6 @@ const dataSlice = createSlice({
 			state.products.loading = true
 		},
 		addNews(state, action: PayloadAction<INews[]>) {
-			// console.log('WORKING...')
-			// console.log('action.payload: ', action.payload)
 			state.newsData.news = [...action.payload]
 			state.newsData.loading = true
 		},
