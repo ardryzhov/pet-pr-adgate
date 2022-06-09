@@ -18,7 +18,7 @@ export interface INews {
 	url: string
 	title: string
 	description: string
-	urlToImage: string
+	image: string
 }
 
 interface INewsData {
@@ -61,7 +61,7 @@ export const fetchNews = createAsyncThunk(
 	'data/fetchProducts',
 	async function (_, { dispatch }) {
 		const response = await fetch(
-			'https://newsapi.org/v2/top-headlines?pageSize=15&country=us&apiKey=6b91115a0e8847a19dfac05baa60714d'
+			'https://gnews.io/api/v4/search?q=example&token=fd479fa985d764bea087e197fb2ff767'
 		)
 		const jsonResult = await response.json()
 		dispatch(addNews(jsonResult.articles))

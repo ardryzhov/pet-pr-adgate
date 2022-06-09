@@ -12,7 +12,7 @@ import {
 	Button,
 } from '@mui/material'
 
-const NewsList: React.FC<INews> = ({ url, title, description, urlToImage }) => {
+const NewsList: React.FC<INews> = ({ url, title, description, image }) => {
 	const shortDescr =
 		description.length > 100 ? `${description.slice(0, 100)}...` : description
 	return (
@@ -20,7 +20,7 @@ const NewsList: React.FC<INews> = ({ url, title, description, urlToImage }) => {
 			<Card sx={{ display: 'flex' }}>
 				<CardMedia
 					component='img'
-					image={urlToImage}
+					image={image}
 					height='180'
 					width='340'
 					sx={{

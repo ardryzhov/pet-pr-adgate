@@ -23,7 +23,7 @@ const NewsPage: React.FC = () => {
 						url={n.url}
 						title={n.title}
 						description={n.description}
-						urlToImage={n.urlToImage}
+						image={n.image}
 					/>
 				))
 			) : (
