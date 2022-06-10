@@ -11,6 +11,7 @@
 
 - React hook Form
 - Material UI
+- Redux Persist
 
 ## Главная страница
 
